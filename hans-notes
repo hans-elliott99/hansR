@@ -1,0 +1,20 @@
+Notes on package:
+
+- Required packages for development:
+  - library(devtools) for creating package elements
+  - library(roxygen2) for package documentation
+
+
+- process:
+  - create a new function by adding a new .R file to R/ directory
+  - can have multiple functions per .R file, but good idea to group them based on purpose
+  - after writing fn, add documentation with roxygen2, and include @export to
+    indicate this function to be “exposed” to users to use
+  - add any external package dependencies to DESCRIPTION. Including the version is only
+    necessary if your function relies on a specific version of the package
+  - after done writing fn, run devtools::document(). this will generate the manual (.Rd)
+    file in the man/ directory
+
+This package got started thanks to the tutorial located at link: https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html
+
+- also includes: encoding data into the package (in binary or raw form), making vignettes, installing the package, distributing the package via github
